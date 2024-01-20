@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 RUN apt-get update -y
-RUN apt-get -y install Nginx
+RUN apt-get -y install apache2
 ADD . /var/www/html
 ENV name DevOps
-ENTRYPOINT Nginxctl -D FOREGROUND
+ENTRYPOINT apachectl -D FOREGROUND
