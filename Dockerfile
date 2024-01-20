@@ -1,6 +1,4 @@
-
-FROM ubuntu
-RUN apt update
-RUN apt install Nginx -y
-ADD . /var/www/html/
-ENTRYPOINT Nginxctl -D FOREGROUND
+FROM nginx:1.10.1-alpine
+COPY index.html /usr/share/nginx/html
+EXPOSE 8080
+CMD ["nginx", "-g", "daemon off;"]
