@@ -1,6 +1,2 @@
-FROM ubuntu
-RUN apt update
-RUN apt install nginx -y
-ADD . /var/www/html
-ENTRYPOINT nginxctl -D FOREGROUND
-EXPOSE 88
+FROM nginx:latest
+COPY ./index.html /usr/share/nginx/html/index.html
